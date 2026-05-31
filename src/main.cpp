@@ -228,7 +228,7 @@ void loop()
 {
     static unsigned long lastCheck = 0;
     // Thay đổi từ 10 giây thành 15 phút (900,000 ms) để tối ưu hệ thống
-    unsigned long checkInterval = 900000; 
+    unsigned long checkInterval = 10000; 
 
     if (millis() - lastCheck > checkInterval)
     {
