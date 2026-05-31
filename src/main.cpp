@@ -14,7 +14,7 @@ const char* WIFI_PASS = "12345679";
 
 // ================= OTA ==================
 const char* VERSION_URL =
-    "https://xdazk.github.io/ESP32OTA/metadata/latest.json";
+    "https://xdazk.github.io/ESP32OTA/latest.json";
 
 String CURRENT_VERSION = "0";
 
