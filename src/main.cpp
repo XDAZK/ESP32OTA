@@ -217,8 +217,10 @@ void checkOTA()
         case HTTP_UPDATE_FAILED:
 
             Serial.printf(
-                "OTA Fail: %s\n",
-                httpUpdate.getLastErrorString().c_str()
+                 "Last Error (%d): %s\n",
+                httpUpdate.getLastError(),
+                httpUpdate.getLastErrorString().c_str(),
+                "OTA Fail: %s\n"
             );
 
             showOLED(
