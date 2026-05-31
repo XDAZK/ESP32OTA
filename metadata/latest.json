@@ -1,0 +1,4 @@
+{
+  "version": "1.0.0",
+  "firmware": "https://github.com/XDAZK/ESP32OTA/releases/latest/download/firmware.bin"
+}

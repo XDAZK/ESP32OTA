@@ -1,9 +1,12 @@
-name: Build ESP32 Firmware
+name: ESP32 OTA Release
 
 on:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -20,7 +23,12 @@ jobs:
 
       - run: pio run
 
-      - uses: actions/upload-artifact@v4
+      - name: Create Release Tag
+        run: |
+          echo "TAG=v$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: firmware
-          path: .pio/build/*/firmware.bin
+          tag_name: ${{ env.TAG }}
+          files: .pio/build/esp32dev/firmware.bin
