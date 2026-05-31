@@ -23,12 +23,31 @@ jobs:
 
       - run: pio run
 
-      - name: Create Release Tag
+      - name: Generate Version
         run: |
-          echo "TAG=v$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+          VERSION=$(date +'%Y.%m.%d.%H%M%S')
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ env.TAG }}
+          tag_name: v${{ env.VERSION }}
           files: .pio/build/esp32dev/firmware.bin
+
+      - name: Generate latest.json
+        run: |
+          mkdir -p metadata
+          cat > metadata/latest.json << EOF
+          {
+            "version": "${{ env.VERSION }}",
+            "firmware": "https://github.com/XDAZK/ESP32OTA/releases/latest/download/firmware.bin"
+          }
+          EOF
+
+      - name: Commit latest.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add metadata/latest.json
+          git commit -m "Update latest.json" || echo "No changes"
+          git push
