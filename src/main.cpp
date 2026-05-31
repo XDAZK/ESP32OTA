@@ -98,7 +98,7 @@ void checkOTA()
 
     if (code != HTTP_CODE_OK)
     {
-        Serial.println("Cannot get latest.json");
+        Serial.printf("latest.json HTTP Error: %d\n", code);
 
         showOLED(
             "OTA Error",
@@ -115,23 +115,20 @@ void checkOTA()
 
     JsonDocument doc;
 
-    DeserializationError err =
-        deserializeJson(doc, payload);
-
-    if (err)
+    if (deserializeJson(doc, payload))
     {
         showOLED("JSON Error");
         return;
     }
 
-    String serverVersion =
-        doc["version"].as<String>();
+    String serverVersion = doc["version"].as<String>();
+    String firmwareUrl = doc["firmware"].as<String>();
 
-    String firmwareUrl =
-        doc["firmware"].as<String>();
-
+    Serial.println("========================");
     Serial.println("Current : " + CURRENT_VERSION);
     Serial.println("Server  : " + serverVersion);
+    Serial.println("Firmware: " + firmwareUrl);
+    Serial.println("========================");
 
     showOLED(
         "Current",
@@ -148,6 +145,35 @@ void checkOTA()
         showOLED(
             "No Update",
             serverVersion
+        );
+
+        return;
+    }
+
+    // TEST firmware URL
+    HTTPClient test;
+
+    test.begin(firmwareUrl);
+
+    int firmwareCode = test.GET();
+
+    Serial.printf(
+        "Firmware HTTP Code: %d\n",
+        firmwareCode
+    );
+
+    Serial.printf(
+        "Firmware Size: %d bytes\n",
+        test.getSize()
+    );
+
+    test.end();
+
+    if (firmwareCode != 200)
+    {
+        showOLED(
+            "Firmware Error",
+            String(firmwareCode)
         );
 
         return;
@@ -217,37 +243,35 @@ void checkOTA()
         case HTTP_UPDATE_FAILED:
 
             Serial.printf(
-                 "Last Error (%d): %s\n",
+                "OTA FAIL (%d): %s\n",
                 httpUpdate.getLastError(),
-                httpUpdate.getLastErrorString().c_str(),
-                "OTA Fail: %s\n"
+                httpUpdate.getLastErrorString().c_str()
             );
 
             showOLED(
                 "OTA Failed",
-                httpUpdate.getLastErrorString()
+                String(httpUpdate.getLastError())
             );
 
             break;
 
         case HTTP_UPDATE_NO_UPDATES:
 
+            Serial.println("No Update");
+
             showOLED(
-                "No Updates"
+                "No Update"
             );
 
             break;
 
         case HTTP_UPDATE_OK:
 
-            Serial.println(
-                "OTA Success"
-            );
+            Serial.println("OTA Success");
 
             break;
     }
 }
-
 void setup()
 {
     Serial.begin(115200);
