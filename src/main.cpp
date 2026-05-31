@@ -3,7 +3,7 @@
 #include <HTTPClient.h>
 #include <HTTPUpdate.h>
 #include <ArduinoJson.h>
-#include <Preferences.h> // Thêm thư viện lưu trữ cấu hình
+#include <Preferences.h> 
 
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -11,7 +11,7 @@
 
 // ================= CONFIG =================
 Preferences preferences;
-String CURRENT_VERSION = "0"; // Sẽ được cập nhật từ bộ nhớ khi boot
+String CURRENT_VERSION = "0"; 
 
 // ================= WIFI =================
 const char* WIFI_SSID = "Dev";
@@ -30,10 +30,16 @@ const char* VERSION_URL = "https://xdazk.github.io/ESP32OTA/latest.json";
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
+// Biến toàn cục để lưu trạng thái hiển thị hiện tại trên OLED nhằm tránh bị đè chữ khi đang log giây
+String globalLine1 = "";
+String globalLine2 = "";
+
 void showOLED(String line1, String line2 = "", String line3 = "")
 {
-    display.clearDisplay();
+    globalLine1 = line1;
+    globalLine2 = line2;
 
+    display.clearDisplay();
     display.setTextSize(1);
     display.setTextColor(SSD1306_WHITE);
 
@@ -49,14 +55,25 @@ void showOLED(String line1, String line2 = "", String line3 = "")
     display.display();
 }
 
+// Hàm cập nhật riêng dòng đồng hồ ở dưới cùng OLED mà không xóa các dòng trên
+void updateOLEDClock(String clockStr) 
+{
+    // Xóa riêng khu vực dòng số 3 (Y từ 48 đến 64)
+    display.fillRect(0, 48, 128, 16, SSD1306_BLACK);
+    
+    display.setTextSize(1);
+    display.setTextColor(SSD1306_WHITE);
+    display.setCursor(0, 48);
+    display.println(clockStr);
+    display.display();
+}
+
 void connectWifi()
 {
     showOLED("Connecting WiFi");
-
     WiFi.begin(WIFI_SSID, WIFI_PASS);
 
     int retry = 0;
-
     while (WiFi.status() != WL_CONNECTED)
     {
         delay(500);
@@ -74,13 +91,10 @@ void connectWifi()
 void checkOTA()
 {
     HTTPClient http;
-
     showOLED("Checking OTA");
-
     http.begin(VERSION_URL);
 
     int code = http.GET();
-
     if (code != HTTP_CODE_OK)
     {
         Serial.printf("latest.json HTTP Error: %d\n", code);
@@ -93,7 +107,6 @@ void checkOTA()
     http.end();
 
     JsonDocument doc;
-
     if (deserializeJson(doc, payload))
     {
         showOLED("JSON Error");
@@ -119,7 +132,6 @@ void checkOTA()
         return;
     }
 
-    // TEST thử URL của firmware xem có tồn tại không
     HTTPClient test;
     test.begin(firmwareUrl);
     int firmwareCode = test.GET();
@@ -137,7 +149,6 @@ void checkOTA()
     showOLED("New Version", serverVersion, "Updating...");
     delay(1000);
 
-    // --- LƯU PHIÊN BẢN MỚI VÀO BỘ NHỚ TRƯỚC KHI KHỞI ĐỘNG CẬP NHẬT ---
     preferences.begin("ota_storage", false);
     preferences.putString("version", serverVersion);
     preferences.end();
@@ -154,7 +165,6 @@ void checkOTA()
     httpUpdate.onProgress([](int current, int total)
     {
         int percent = (current * 100) / total;
-
         Serial.printf("OTA %d%%\n", percent);
 
         display.clearDisplay();
@@ -183,7 +193,6 @@ void checkOTA()
             Serial.printf("OTA FAIL (%d): %s\n", httpUpdate.getLastError(), httpUpdate.getLastErrorString().c_str());
             showOLED("OTA Failed", String(httpUpdate.getLastErrorString()));
             
-            // Nếu update thất bại, nạp lại version cũ vào bộ nhớ để không bị lệch thông tin
             preferences.begin("ota_storage", false);
             preferences.putString("version", CURRENT_VERSION);
             preferences.end();
@@ -195,7 +204,7 @@ void checkOTA()
             break;
 
         case HTTP_UPDATE_OK:
-            Serial.println("OTA Success"); // Thường ESP32 sẽ tự động reset tại đây
+            Serial.println("OTA Success");
             break;
     }
 }
@@ -204,9 +213,8 @@ void setup()
 {
     Serial.begin(115200);
 
-    // Khởi tạo và đọc Version đã lưu trong Flash
     preferences.begin("ota_storage", false);
-    CURRENT_VERSION = preferences.getString("version", "0"); // Mặc định là "0" nếu chạy lần đầu
+    CURRENT_VERSION = preferences.getString("version", "0"); 
     preferences.end();
 
     Wire.begin(OLED_SDA, OLED_SCL);
@@ -227,9 +235,33 @@ void setup()
 void loop()
 {
     static unsigned long lastCheck = 0;
-    // Thay đổi từ 10 giây thành 15 phút (900,000 ms) để tối ưu hệ thống
-    unsigned long checkInterval = 10000; 
+    static unsigned long lastClockLog = 0;
+    
+    unsigned long checkInterval = 10000; // Giữ nguyên 10 giây check OTA 1 lần theo logic cũ của bạn
 
+    // --- CHỨC NĂNG LOG ĐỒNG HỒ MỖI GIÂY (1000 ms) ---
+    if (millis() - lastClockLog >= 1000)
+    {
+        lastClockLog = millis();
+        
+        // Tính toán Giờ : Phút : Giây từ uptime hệ thống
+        unsigned long totalSeconds = millis() / 1000;
+        unsigned long seconds = totalSeconds % 60;
+        unsigned long minutes = (totalSeconds / 60) % 60;
+        unsigned long hours = (totalSeconds / 3600);
+
+        // Định dạng chuỗi thời gian hiển thị (Ví dụ: "Uptime: 01:23:45")
+        char clockBuffer[20];
+        sprintf(clockBuffer, "Uptime: %02lu:%02lu:%02lu", hours, minutes, seconds);
+
+        // 1. Log ra màn hình Serial máy tính
+        Serial.println(clockBuffer);
+
+        // 2. Log ra dòng cuối cùng trên màn hình OLED
+        updateOLEDClock(String(clockBuffer));
+    }
+
+    // --- KHỐI LOGIC CHECK OTA GIỮ NGUYÊN ---
     if (millis() - lastCheck > checkInterval)
     {
         lastCheck = millis();
@@ -240,5 +272,5 @@ void loop()
         }
     }
 
-    delay(1000);
+    // Đã loại bỏ delay(1000) cũ ở đây để đảm bảo hàm loop quét mượt mà, đồng hồ chạy chính xác từng mi-li-giây.
 }
