@@ -3,24 +3,24 @@
 #include <HTTPClient.h>
 #include <HTTPUpdate.h>
 #include <ArduinoJson.h>
-#include <Preferences.h> 
 
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
 // ================= CONFIG =================
-Preferences preferences;
-String CURRENT_VERSION = "0"; 
+// Phiên bản hiện tại của firmware này. Khi xuất bản bản mới, chỉ cần tăng số này và build .bin
+const String CURRENT_VERSION = "2026.05.31.204932"; 
 
-// ================= WIFI =================
+// ================= WIFI ===================
 const char* WIFI_SSID = "Dev";
 const char* WIFI_PASS = "12345679";
 
-// ================= OTA ==================
+// ================= OTA ====================
 const char* VERSION_URL = "https://xdazk.github.io/ESP32OTA/latest.json";
+const unsigned long OTA_CHECK_INTERVAL = 60000; // Kiểm tra OTA mỗi 60 giây
 
-// ================= OLED =================
+// ================= OLED ===================
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 
@@ -30,15 +30,8 @@ const char* VERSION_URL = "https://xdazk.github.io/ESP32OTA/latest.json";
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-// Biến toàn cục để lưu trạng thái hiển thị hiện tại trên OLED nhằm tránh bị đè chữ khi đang log giây
-String globalLine1 = "";
-String globalLine2 = "";
-
 void showOLED(String line1, String line2 = "", String line3 = "")
 {
-    globalLine1 = line1;
-    globalLine2 = line2;
-
     display.clearDisplay();
     display.setTextSize(1);
     display.setTextColor(SSD1306_WHITE);
@@ -55,12 +48,10 @@ void showOLED(String line1, String line2 = "", String line3 = "")
     display.display();
 }
 
-// Hàm cập nhật riêng dòng đồng hồ ở dưới cùng OLED mà không xóa các dòng trên
+// Cập nhật riêng dòng đồng hồ Uptime ở dưới cùng màn hình (Y: 48)
 void updateOLEDClock(String clockStr) 
 {
-    // Xóa riêng khu vực dòng số 3 (Y từ 48 đến 64)
     display.fillRect(0, 48, 128, 16, SSD1306_BLACK);
-    
     display.setTextSize(1);
     display.setTextColor(SSD1306_WHITE);
     display.setCursor(0, 48);
@@ -68,37 +59,61 @@ void updateOLEDClock(String clockStr)
     display.display();
 }
 
-void connectWifi()
+bool connectWifi(int timeoutSeconds = 15)
 {
-    showOLED("Connecting WiFi");
+    if (WiFi.status() == WL_CONNECTED) return true;
+
+    showOLED("Connecting WiFi...", String(WIFI_SSID));
     WiFi.begin(WIFI_SSID, WIFI_PASS);
 
     int retry = 0;
-    while (WiFi.status() != WL_CONNECTED)
+    while (WiFi.status() != WL_CONNECTED && retry < (timeoutSeconds * 2))
     {
         delay(500);
         Serial.print(".");
-        showOLED("Connecting WiFi", "Retry: " + String(retry++));
+        retry++;
+        showOLED("Connecting WiFi", "SSID: " + String(WIFI_SSID), "Retry: " + String(retry));
     }
 
-    Serial.println();
-    Serial.println("WiFi Connected");
-
-    showOLED("WiFi Connected", WiFi.localIP().toString());
-    delay(1500);
+    if (WiFi.status() == WL_CONNECTED)
+    {
+        Serial.println("\nWiFi Connected: " + WiFi.localIP().toString());
+        showOLED("WiFi Connected!", "IP: " + WiFi.localIP().toString());
+        delay(1000);
+        return true;
+    }
+    else
+    {
+        Serial.println("\nWiFi Connection Failed (Timeout)!");
+        showOLED("WiFi Failed!", "Will retry later...");
+        delay(1000);
+        return false;
+    }
 }
 
 void checkOTA()
 {
-    HTTPClient http;
-    showOLED("Checking OTA");
-    http.begin(VERSION_URL);
+    if (WiFi.status() != WL_CONNECTED) return;
 
-    int code = http.GET();
-    if (code != HTTP_CODE_OK)
+    Serial.println("\n--- Checking for OTA Update ---");
+    showOLED("Checking OTA...");
+
+    WiFiClientSecure client;
+    client.setInsecure(); // Chấp nhận HTTPS GitHub Pages
+
+    HTTPClient http;
+    if (!http.begin(client, VERSION_URL))
     {
-        Serial.printf("latest.json HTTP Error: %d\n", code);
-        showOLED("OTA Error", "HTTP: " + String(code));
+        Serial.println("Cannot connect to VERSION_URL");
+        showOLED("OTA Error", "Connect Failed");
+        return;
+    }
+
+    int httpCode = http.GET();
+    if (httpCode != HTTP_CODE_OK)
+    {
+        Serial.printf("latest.json HTTP Error: %d\n", httpCode);
+        showOLED("OTA Error", "HTTP Code: " + String(httpCode));
         http.end();
         return;
     }
@@ -107,9 +122,11 @@ void checkOTA()
     http.end();
 
     JsonDocument doc;
-    if (deserializeJson(doc, payload))
+    DeserializationError error = deserializeJson(doc, payload);
+    if (error)
     {
-        showOLED("JSON Error");
+        Serial.printf("JSON parse error: %s\n", error.c_str());
+        showOLED("JSON Error", error.c_str());
         return;
     }
 
@@ -117,55 +134,30 @@ void checkOTA()
     String firmwareUrl = doc["firmware"].as<String>();
 
     Serial.println("========================");
-    Serial.println("Current : " + CURRENT_VERSION);
-    Serial.println("Server  : " + serverVersion);
-    Serial.println("Firmware: " + firmwareUrl);
+    Serial.println("Current Ver : " + CURRENT_VERSION);
+    Serial.println("Server Ver  : " + serverVersion);
+    Serial.println("Firmware URL: " + firmwareUrl);
     Serial.println("========================");
 
-    showOLED("Current: " + CURRENT_VERSION, "Server : " + serverVersion);
-    delay(2000);
-
-    if (serverVersion == CURRENT_VERSION)
+    if (serverVersion == CURRENT_VERSION || serverVersion.length() == 0)
     {
-        Serial.println("Already latest");
-        showOLED("No Update", "Version: " + serverVersion);
+        Serial.println("Device is running latest version.");
+        showOLED("Firmware Latest", "Ver: " + CURRENT_VERSION);
         return;
     }
 
-    HTTPClient test;
-    test.begin(firmwareUrl);
-    int firmwareCode = test.GET();
+    // Phát hiện phiên bản mới
+    showOLED("New Update Found!", "Ver: " + serverVersion, "Starting OTA...");
+    delay(1500);
 
-    Serial.printf("Firmware HTTP Code: %d\n", firmwareCode);
-    Serial.printf("Firmware Size: %d bytes\n", test.getSize());
-    test.end();
-
-    if (firmwareCode != 200)
-    {
-        showOLED("Firmware Error", "HTTP: " + String(firmwareCode));
-        return;
-    }
-
-    showOLED("New Version", serverVersion, "Updating...");
-    delay(1000);
-
-    preferences.begin("ota_storage", false);
-    preferences.putString("version", serverVersion);
-    preferences.end();
-
-    WiFiClientSecure client;
-    client.setInsecure();
-
-    httpUpdate.onStart([]()
-    {
-        Serial.println("OTA Start");
-        showOLED("OTA Started");
+    httpUpdate.onStart([]() {
+        Serial.println("OTA Update Started");
+        showOLED("OTA Starting...");
     });
 
-    httpUpdate.onProgress([](int current, int total)
-    {
-        int percent = (current * 100) / total;
-        Serial.printf("OTA %d%%\n", percent);
+    httpUpdate.onProgress([](int current, int total) {
+        int percent = (total > 0) ? ((current * 100) / total) : 0;
+        Serial.printf("OTA Progress: %d%%\n", percent);
 
         display.clearDisplay();
         display.setTextSize(2);
@@ -173,38 +165,37 @@ void checkOTA()
         display.setCursor(0, 10);
         display.print("OTA UPDATE");
 
-        display.setCursor(0, 40);
-        display.print(percent);
-        display.print("%");
+        display.setCursor(0, 38);
+        display.printf("%d %%", percent);
         display.display();
     });
 
-    httpUpdate.onEnd([]()
-    {
-        Serial.println("OTA Done");
-        showOLED("OTA Success", "Rebooting...");
+    httpUpdate.onEnd([]() {
+        Serial.println("OTA Update Finished! Rebooting...");
+        showOLED("OTA Success!", "Rebooting...");
     });
 
+    httpUpdate.onError([](int err) {
+        Serial.printf("OTA Callback Error: %d\n", err);
+    });
+
+    // Thực hiện OTA update
     t_httpUpdate_return ret = httpUpdate.update(client, firmwareUrl);
 
     switch (ret)
     {
         case HTTP_UPDATE_FAILED:
             Serial.printf("OTA FAIL (%d): %s\n", httpUpdate.getLastError(), httpUpdate.getLastErrorString().c_str());
-            showOLED("OTA Failed", String(httpUpdate.getLastErrorString()));
-            
-            preferences.begin("ota_storage", false);
-            preferences.putString("version", CURRENT_VERSION);
-            preferences.end();
+            showOLED("OTA Failed!", httpUpdate.getLastErrorString());
             break;
 
         case HTTP_UPDATE_NO_UPDATES:
-            Serial.println("No Update");
-            showOLED("No Update");
+            Serial.println("HTTP_UPDATE_NO_UPDATES");
+            showOLED("No Updates");
             break;
 
         case HTTP_UPDATE_OK:
-            Serial.println("OTA Success");
+            Serial.println("OTA Update OK");
             break;
     }
 }
@@ -213,64 +204,55 @@ void setup()
 {
     Serial.begin(115200);
 
-    preferences.begin("ota_storage", false);
-    CURRENT_VERSION = preferences.getString("version", "0"); 
-    preferences.end();
-
     Wire.begin(OLED_SDA, OLED_SCL);
-
     if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C))
     {
-        Serial.println("OLED fail");
+        Serial.println("OLED allocation failed");
         while (true) delay(1000);
     }
 
-    showOLED("ESP32 OTA System", "Current Ver: " + CURRENT_VERSION, "Booting...");
+    showOLED("ESP32 OTA System", "Ver: " + CURRENT_VERSION, "Booting...");
     delay(1500);
 
-    connectWifi();
-    checkOTA();
+    if (connectWifi())
+    {
+        checkOTA();
+    }
 }
 
 void loop()
 {
     static unsigned long lastCheck = 0;
     static unsigned long lastClockLog = 0;
-    
-    unsigned long checkInterval = 10000; // Giữ nguyên 10 giây check OTA 1 lần theo logic cũ của bạn
 
-    // --- CHỨC NĂNG LOG ĐỒNG HỒ MỖI GIÂY (1000 ms) ---
+    // 1. Cập nhật Uptime mỗi 1 giây
     if (millis() - lastClockLog >= 1000)
     {
         lastClockLog = millis();
-        
-        // Tính toán Giờ : Phút : Giây từ uptime hệ thống
+
         unsigned long totalSeconds = millis() / 1000;
         unsigned long seconds = totalSeconds % 60;
         unsigned long minutes = (totalSeconds / 60) % 60;
         unsigned long hours = (totalSeconds / 3600);
 
-        // Định dạng chuỗi thời gian hiển thị (Ví dụ: "Uptime: 01:23:45")
-        char clockBuffer[20];
-        sprintf(clockBuffer, "Uptime: %02lu:%02lu:%02lu", hours, minutes, seconds);
+        char clockBuffer[25];
+        snprintf(clockBuffer, sizeof(clockBuffer), "Uptime: %02lu:%02lu:%02lu", hours, minutes, seconds);
 
-        // 1. Log ra màn hình Serial máy tính
         Serial.println(clockBuffer);
-
-        // 2. Log ra dòng cuối cùng trên màn hình OLED
         updateOLEDClock(String(clockBuffer));
     }
 
-    // --- KHỐI LOGIC CHECK OTA GIỮ NGUYÊN ---
-    if (millis() - lastCheck > checkInterval)
+    // 2. Kiểm tra OTA định kỳ
+    if (millis() - lastCheck >= OTA_CHECK_INTERVAL)
     {
         lastCheck = millis();
-        if (WiFi.status() == WL_CONNECTED) {
+        if (WiFi.status() == WL_CONNECTED)
+        {
             checkOTA();
-        } else {
+        }
+        else
+        {
             connectWifi();
         }
     }
-
-    // Đã loại bỏ delay(1000) cũ ở đây để đảm bảo hàm loop quét mượt mà, đồng hồ chạy chính xác từng mi-li-giây.
 }
