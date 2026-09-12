@@ -26,6 +26,12 @@ jobs:
 
       - name: Build
         run: pio run
+      - name: Generate Version & Build Firmware
+        run: |
+          VERSION=$(date +'%Y.%m.%d.%H%M%S')
+          echo "Building firmware version: $VERSION"
+          export PLATFORMIO_BUILD_FLAGS="-D CURRENT_FIRMWARE_VERSION='\"$VERSION\"'"
+          pio run
 
       - name: Generate OTA Files
         run: |
