@@ -1,0 +1,2436 @@
+{
+  "totalUniqueRooms": 74,
+  "scannedAt": "2026-09-12T20:21:53.706Z",
+  "categories": {
+    "Dating": [
+      {
+        "roomId": "22609139648906412",
+        "topic": "Ghép đôi nam nữ :) nch vui vui",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 42518012,
+        "ownerIdIdEcpt": "Gf6dL68ipV6MhJLxD9KXag==",
+        "userIdEcpt": "Gf6dL68ipV6MhJLxD9KXag==",
+        "signature": "Emmeo🥳",
+        "roomerSize": 11,
+        "members": [
+          {
+            "userId": 42518012,
+            "userIdEcpt": "Gf6dL68ipV6MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Emmeo🥳",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 41913588,
+            "userIdEcpt": "2LkuFdDKb2GMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "latleocuoctinh",
+            "gender": "Nam"
+          },
+          {
+            "userId": 40514373,
+            "userIdEcpt": "PanHppbqLDyMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Yêu yêu",
+            "gender": "Nam"
+          },
+          {
+            "userId": 38264974,
+            "userIdEcpt": "PxHxtvUUWkyMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "TOM LỐP TRƯỞNG",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137551724971",
+        "topic": "a nào giàu dô lụm 1 em:))",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 40724471,
+        "ownerIdIdEcpt": "JlGwy7ujWZuMhJLxD9KXag==",
+        "userIdEcpt": "JlGwy7ujWZuMhJLxD9KXag==",
+        "signature": "đẹp gái 2 mái",
+        "roomerSize": 7,
+        "members": [
+          {
+            "userId": 40724471,
+            "userIdEcpt": "JlGwy7ujWZuMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "đẹp gái 2 mái",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 40176639,
+            "userIdEcpt": "nxMupOam1GmMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "khha",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 42423283,
+            "userIdEcpt": "UFWa3giHL2CMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "bum",
+            "gender": "Nam"
+          },
+          {
+            "userId": 41973946,
+            "userIdEcpt": "7l+0aPmS1L6MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "D",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609134646667379",
+        "topic": "Nch vui vẻ với tôi",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 42414979,
+        "ownerIdIdEcpt": "4HABfIMUbXGMhJLxD9KXag==",
+        "userIdEcpt": "4HABfIMUbXGMhJLxD9KXag==",
+        "signature": "Bem",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 42414979,
+            "userIdEcpt": "4HABfIMUbXGMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Bem",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 41970836,
+            "userIdEcpt": "4WfExHHA94aMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Duy khánh",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609139235182543",
+        "topic": "mời mng trải lòng vs em",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 31427943,
+        "ownerIdIdEcpt": "iea7X5zP9UCMhJLxD9KXag==",
+        "userIdEcpt": "iea7X5zP9UCMhJLxD9KXag==",
+        "signature": "Xuân2007🌴🍂",
+        "roomerSize": 8,
+        "members": [
+          {
+            "userId": 31427943,
+            "userIdEcpt": "iea7X5zP9UCMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Xuân2007🌴🍂",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 42964598,
+            "userIdEcpt": "z9DF9GGM1VqMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "akue",
+            "gender": "Nam"
+          },
+          {
+            "userId": 32477010,
+            "userIdEcpt": "HELv/fZT06aMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "nam99",
+            "gender": "Nam"
+          },
+          {
+            "userId": 41685742,
+            "userIdEcpt": "z91Zkc4cC0CMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "mer",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609135877935241",
+        "topic": "Tình yêu ơi 💘Đến nhanh đi",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 42604641,
+        "ownerIdIdEcpt": "lTBi1/KBUpSMhJLxD9KXag==",
+        "userIdEcpt": "lTBi1/KBUpSMhJLxD9KXag==",
+        "signature": "🐉®𝕿hiên㊪Bi©🐉",
+        "roomerSize": 4,
+        "members": [
+          {
+            "userId": 42604641,
+            "userIdEcpt": "lTBi1/KBUpSMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "🐉®𝕿hiên㊪Bi©🐉",
+            "gender": "Nam"
+          },
+          {
+            "userId": 42073535,
+            "userIdEcpt": "RVAdJ47yhiuMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "T/h 👤",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 36679953,
+            "userIdEcpt": "rx0IQHLZs3KMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "k10",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 38465091,
+            "userIdEcpt": "d8YnKB6OCX+MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "PopUp User",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609134202852164",
+        "topic": "ghép đôi",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 36266264,
+        "ownerIdIdEcpt": "5+RwQXtk8IGMhJLxD9KXag==",
+        "userIdEcpt": "5+RwQXtk8IGMhJLxD9KXag==",
+        "signature": "Biu",
+        "roomerSize": 8,
+        "members": [
+          {
+            "userId": 36266264,
+            "userIdEcpt": "5+RwQXtk8IGMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Biu",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 36062526,
+            "userIdEcpt": "TGrjxgxEdmKMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "kua_art",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 36139848,
+            "userIdEcpt": "GflQ+XFoaUOMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Tomixiaobi",
+            "gender": "Nam"
+          },
+          {
+            "userId": 43090230,
+            "userIdEcpt": "NPg6nQNbR6+MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Ngọc Anh",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609134648290451",
+        "topic": "Nch+ghép đôi🐤🦋",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 40509451,
+        "ownerIdIdEcpt": "mkVPgF6dRu2MhJLxD9KXag==",
+        "userIdEcpt": "mkVPgF6dRu2MhJLxD9KXag==",
+        "signature": "Lại Tấn Phát",
+        "roomerSize": 4,
+        "members": [
+          {
+            "userId": 40509451,
+            "userIdEcpt": "mkVPgF6dRu2MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Lại Tấn Phát",
+            "gender": "Nam"
+          },
+          {
+            "userId": 42359217,
+            "userIdEcpt": "We9RQ+hxzraMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Chip~",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 42990873,
+            "userIdEcpt": "QTO+9O2gMn6MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "hoàng tử anime",
+            "gender": "Nam"
+          },
+          {
+            "userId": 42779414,
+            "userIdEcpt": "3EfcZlU3QuSMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "q",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137584518440",
+        "topic": "🙂‍↕️🙂‍↕️🙂‍↕️",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 28102640,
+        "ownerIdIdEcpt": "P8a69AfMS16MhJLxD9KXag==",
+        "userIdEcpt": "P8a69AfMS16MhJLxD9KXag==",
+        "signature": "𝓒Ậ𝓾 𝓗𝓪𝓲♥️",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 28102640,
+            "userIdEcpt": "P8a69AfMS16MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "𝓒Ậ𝓾 𝓗𝓪𝓲♥️",
+            "gender": "Nam"
+          },
+          {
+            "userId": 24482475,
+            "userIdEcpt": "jCTBDPd0iGKMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "💕𝒫𝒽.𝒜𝓃𝒽💕",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609135879768145",
+        "topic": "Ghép đôi cp",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 41102045,
+        "ownerIdIdEcpt": "a29a7qGOpzqMhJLxD9KXag==",
+        "userIdEcpt": "a29a7qGOpzqMhJLxD9KXag==",
+        "signature": "xMarchi❤️",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 41102045,
+            "userIdEcpt": "a29a7qGOpzqMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "xMarchi❤️",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 42735139,
+            "userIdEcpt": "HkhXW4FYgnaMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Anh Linh",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137997177707",
+        "topic": "lit mắc tui iu😑",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 35377207,
+        "ownerIdIdEcpt": "X8Hki8vjtYiMhJLxD9KXag==",
+        "userIdEcpt": "X8Hki8vjtYiMhJLxD9KXag==",
+        "signature": "uk",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 35377207,
+            "userIdEcpt": "X8Hki8vjtYiMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "uk",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 43029354,
+            "userIdEcpt": "iy/3QqGaWwGMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "william.38_",
+            "gender": "Nam"
+          },
+          {
+            "userId": 40532326,
+            "userIdEcpt": "atzsXWrME2yMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Bbn",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609139229371302",
+        "topic": "Music and sleeping with Vô Gia Cư",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 38216002,
+        "ownerIdIdEcpt": "O1p/DmLWrVWMhJLxD9KXag==",
+        "userIdEcpt": "O1p/DmLWrVWMhJLxD9KXag==",
+        "signature": "Whale Hi 🐳🐋",
+        "roomerSize": 5,
+        "members": [
+          {
+            "userId": 38216002,
+            "userIdEcpt": "O1p/DmLWrVWMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Whale Hi 🐳🐋",
+            "gender": "Nam"
+          },
+          {
+            "userId": 37727000,
+            "userIdEcpt": "4aLZz8dTg5eMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Tép",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 35923370,
+            "userIdEcpt": "NOM/u0XwhXCMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "🦜𝓱ỉ 𝓱ỉ",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 38591971,
+            "userIdEcpt": "3UHYm9LbNrWMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": ".˳˖✶𓆩Orca𓆪✶🫍",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609134622066559",
+        "topic": "phòng tóc hồng",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 32199859,
+        "ownerIdIdEcpt": "4RbkC8Gtvl+MhJLxD9KXag==",
+        "userIdEcpt": "4RbkC8Gtvl+MhJLxD9KXag==",
+        "signature": "hihi🇻🇳",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 32199859,
+            "userIdEcpt": "4RbkC8Gtvl+MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "hihi🇻🇳",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 34625666,
+            "userIdEcpt": "uzHl++ES2HCMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "HeHe 🇻🇳",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 40108732,
+            "userIdEcpt": "ie0u27TX9UOMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Nguyễn đình",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137969555395",
+        "topic": "cp treo máy ngủ 😴😴😴 xin phiền đến cp ngủ 😴😴😴😴",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 36925095,
+        "ownerIdIdEcpt": "my0qbg+8SGmMhJLxD9KXag==",
+        "userIdEcpt": "my0qbg+8SGmMhJLxD9KXag==",
+        "signature": "hải iu vk ánh ♥",
+        "roomerSize": 1,
+        "members": [
+          {
+            "userId": 36925095,
+            "userIdEcpt": "my0qbg+8SGmMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "hải iu vk ánh ♥",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609139648608044",
+        "topic": "Phòng nói chuyện với ck",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 34109744,
+        "ownerIdIdEcpt": "7pUTLT2us6GMhJLxD9KXag==",
+        "userIdEcpt": "7pUTLT2us6GMhJLxD9KXag==",
+        "signature": "💝",
+        "roomerSize": 1,
+        "members": [
+          {
+            "userId": 34109744,
+            "userIdEcpt": "7pUTLT2us6GMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "💝",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137577760176",
+        "topic": "treo ngủ",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 38933276,
+        "ownerIdIdEcpt": "N4KOo87KdGmMhJLxD9KXag==",
+        "userIdEcpt": "N4KOo87KdGmMhJLxD9KXag==",
+        "signature": "yêu",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 38933276,
+            "userIdEcpt": "N4KOo87KdGmMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "yêu",
+            "gender": "Nam"
+          },
+          {
+            "userId": 42345612,
+            "userIdEcpt": "fnK25vbVsFaMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Quân AP",
+            "gender": "Nam"
+          },
+          {
+            "userId": 39020771,
+            "userIdEcpt": "yiBxLkNanBOMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Đụt",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609135905146595",
+        "topic": "treo nghe nhạc ngủ",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 39669295,
+        "ownerIdIdEcpt": "v8tJy/uB7UmMhJLxD9KXag==",
+        "userIdEcpt": "v8tJy/uB7UmMhJLxD9KXag==",
+        "signature": "chuột🐭🐭🐭",
+        "roomerSize": 1,
+        "members": [
+          {
+            "userId": 39669295,
+            "userIdEcpt": "v8tJy/uB7UmMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "chuột🐭🐭🐭",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609136290800057",
+        "topic": "helo miền tâyđaay",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 29792757,
+        "ownerIdIdEcpt": "2HEQnIfWjVqMhJLxD9KXag==",
+        "userIdEcpt": "2HEQnIfWjVqMhJLxD9KXag==",
+        "signature": "phát nobi",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 29792757,
+            "userIdEcpt": "2HEQnIfWjVqMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "phát nobi",
+            "gender": "Nam"
+          },
+          {
+            "userId": 39999187,
+            "userIdEcpt": "fQAVn4VtfWyMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "meo",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609136326232801",
+        "topic": "Chia sẻ bộ phim yêu thích của bạn 🎬",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 30532701,
+        "ownerIdIdEcpt": "r1ESykCTlQWMhJLxD9KXag==",
+        "userIdEcpt": "r1ESykCTlQWMhJLxD9KXag==",
+        "signature": "Bông ju ơi 💜",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 30532701,
+            "userIdEcpt": "r1ESykCTlQWMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Bông ju ơi 💜",
+            "gender": "Nam"
+          },
+          {
+            "userId": 36814260,
+            "userIdEcpt": "ESDEGZZiFzqMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "tom ju ơi ❤️‍🔥",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137584288837",
+        "topic": "Cho ngay em den 🦋🦋🦋",
+        "classifyCode": "Dating",
+        "classifyLangKey": "GroupChat_Topic_Dating",
+        "source": "recommend",
+        "ownerId": 42656737,
+        "ownerIdIdEcpt": "BaC4xOfCBQqMhJLxD9KXag==",
+        "userIdEcpt": "BaC4xOfCBQqMhJLxD9KXag==",
+        "signature": "Matuycuadanba",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 42656737,
+            "userIdEcpt": "BaC4xOfCBQqMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Matuycuadanba",
+            "gender": "Nam"
+          },
+          {
+            "userId": 38959775,
+            "userIdEcpt": "vPq30rn7M6OMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "em beo",
+            "gender": "Nữ"
+          }
+        ]
+      }
+    ],
+    "Chit_Chat": [
+      {
+        "roomId": "22609135033316013",
+        "topic": "29 Hà Nội chào ae nhó",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 41462413,
+        "ownerIdIdEcpt": "n/dKVPgCwV2MhJLxD9KXag==",
+        "userIdEcpt": "n/dKVPgCwV2MhJLxD9KXag==",
+        "signature": "Tom",
+        "roomerSize": 13,
+        "members": [
+          {
+            "userId": 41462413,
+            "userIdEcpt": "n/dKVPgCwV2MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Tom",
+            "gender": "Nam"
+          },
+          {
+            "userId": 42447791,
+            "userIdEcpt": "amLPdYzGDxCMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Meo",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 42059327,
+            "userIdEcpt": "63FR0v+8ekSMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "zewy",
+            "gender": "Nam"
+          },
+          {
+            "userId": 34624105,
+            "userIdEcpt": "Rq+RHZMROX2MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "🦖🦖🐸",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609129234288940",
+        "topic": "Vào chơi với mình nha",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 41656140,
+        "ownerIdIdEcpt": "z7FWvhIEVoSMhJLxD9KXag==",
+        "userIdEcpt": "z7FWvhIEVoSMhJLxD9KXag==",
+        "signature": "Embe",
+        "roomerSize": 5,
+        "members": [
+          {
+            "userId": 41656140,
+            "userIdEcpt": "z7FWvhIEVoSMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Embe",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 43022328,
+            "userIdEcpt": "DJPdNjTJtUOMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Bii",
+            "gender": "Nam"
+          },
+          {
+            "userId": 42038441,
+            "userIdEcpt": "DIacgDijz/GMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "khánh",
+            "gender": "Nam"
+          },
+          {
+            "userId": 24429591,
+            "userIdEcpt": "XNrpZSJIbs6MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "๒é๒ìย ๒ướภᘐ๒ỉภ♄",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609139652985743",
+        "topic": "chạy thận =))",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 36681643,
+        "ownerIdIdEcpt": "RovactHakkmMhJLxD9KXag==",
+        "userIdEcpt": "RovactHakkmMhJLxD9KXag==",
+        "signature": "Cat Đangyeuu😿",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 36681643,
+            "userIdEcpt": "RovactHakkmMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Cat Đangyeuu😿",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 39499046,
+            "userIdEcpt": "/hkuLyXcIqCMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "JayTii",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609136292438588",
+        "topic": "Met nhì 🥲",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 42748488,
+        "ownerIdIdEcpt": "AbwrokDOeQyMhJLxD9KXag==",
+        "userIdEcpt": "AbwrokDOeQyMhJLxD9KXag==",
+        "signature": "Lão Cốt👺👹",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 42748488,
+            "userIdEcpt": "AbwrokDOeQyMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Lão Cốt👺👹",
+            "gender": "Nam"
+          },
+          {
+            "userId": 23262352,
+            "userIdEcpt": "r2C1X1AHM0GMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Niii",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 34335397,
+            "userIdEcpt": "1TLH93Sx4gyMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "heo mắc cạn~~",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609139234182424",
+        "topic": "Chia sẻ phi vụ khám phá hay ho trên mạng của bạn 💻",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 40905324,
+        "ownerIdIdEcpt": "7CvFj9og/nSMhJLxD9KXag==",
+        "userIdEcpt": "7CvFj9og/nSMhJLxD9KXag==",
+        "signature": "🏧N.Ánh",
+        "roomerSize": 1,
+        "members": [
+          {
+            "userId": 40905324,
+            "userIdEcpt": "7CvFj9og/nSMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "🏧N.Ánh",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609135898584036",
+        "topic": "Ai còn thức vào nch vs cp ik",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 41217836,
+        "ownerIdIdEcpt": "W5bKHRv783GMhJLxD9KXag==",
+        "userIdEcpt": "W5bKHRv783GMhJLxD9KXag==",
+        "signature": "Lốp xe máy",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 41217836,
+            "userIdEcpt": "W5bKHRv783GMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Lốp xe máy",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 41611576,
+            "userIdEcpt": "rT8JFebCw4WMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "thích ăn mỳ cay",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609127131988004",
+        "topic": "Ghép đôi nè mấy cưng💋",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 38551004,
+        "ownerIdIdEcpt": "eAc6AszWwiKMhJLxD9KXag==",
+        "userIdEcpt": "eAc6AszWwiKMhJLxD9KXag==",
+        "signature": "𝐀 𝐁𝐞́𝐨💋",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 38551004,
+            "userIdEcpt": "eAc6AszWwiKMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "𝐀 𝐁𝐞́𝐨💋",
+            "gender": "Nam"
+          },
+          {
+            "userId": 40433462,
+            "userIdEcpt": "JDaRIPj6AFeMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "👙han👙❤️",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 34272717,
+            "userIdEcpt": "UX4hzLGBnVOMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "👙thùy👙❤️",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137576300873",
+        "topic": "Môn thể thao bạn thích nhất 🏀",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 39970673,
+        "ownerIdIdEcpt": "t3ZylCJ6oTqMhJLxD9KXag==",
+        "userIdEcpt": "t3ZylCJ6oTqMhJLxD9KXag==",
+        "signature": "Xoài wibu 🦉",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 39970673,
+            "userIdEcpt": "t3ZylCJ6oTqMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Xoài wibu 🦉",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 37463258,
+            "userIdEcpt": "lNQfEx42PB6MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "🎭mẹ của cp 🦉",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609127975668244",
+        "topic": "Môn thể thao bạn thích nhất 🏀",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 38420744,
+        "ownerIdIdEcpt": "wzZ1Gb1Nsa6MhJLxD9KXag==",
+        "userIdEcpt": "wzZ1Gb1Nsa6MhJLxD9KXag==",
+        "signature": "jet jet hút jet",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 38420744,
+            "userIdEcpt": "wzZ1Gb1Nsa6MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "jet jet hút jet",
+            "gender": "Nam"
+          },
+          {
+            "userId": 37504479,
+            "userIdEcpt": "osVMTN3L90eMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "bà ngoại nè con",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137971195225",
+        "topic": "phòng ghép đôi",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 29893925,
+        "ownerIdIdEcpt": "qOt6t7GB+caMhJLxD9KXag==",
+        "userIdEcpt": "qOt6t7GB+caMhJLxD9KXag==",
+        "signature": "Cún iu",
+        "roomerSize": 11,
+        "members": [
+          {
+            "userId": 29893925,
+            "userIdEcpt": "qOt6t7GB+caMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Cún iu",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 36380646,
+            "userIdEcpt": "ku1AnUOZ8zOMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "mít onichan~~",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 41884444,
+            "userIdEcpt": "qbB9WeCU8tWMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "_bố là bống_🎀",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 39432834,
+            "userIdEcpt": "f+EBxwea8XKMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Duy Ân ",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609135485705734",
+        "topic": "Tư vấn chuyện tình cảm + tâm sự",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 40957634,
+        "ownerIdIdEcpt": "vVRlltY4P3iMhJLxD9KXag==",
+        "userIdEcpt": "vVRlltY4P3iMhJLxD9KXag==",
+        "signature": "Tôn ngộ không",
+        "roomerSize": 13,
+        "members": [
+          {
+            "userId": 40957634,
+            "userIdEcpt": "vVRlltY4P3iMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Tôn ngộ không",
+            "gender": "Nam"
+          },
+          {
+            "userId": 41262430,
+            "userIdEcpt": "nFpZxorGy4SMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "📀𝕎ⅈ͛𝕟🎵♬",
+            "gender": "Nam"
+          },
+          {
+            "userId": 42013278,
+            "userIdEcpt": "OpXsrvx37FuMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "✨Ely Mirein 🦩",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 39683288,
+            "userIdEcpt": "xGSJrCotsZyMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Xi Ta❤️‍🩹",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609138389793641",
+        "topic": "Tiệm 📀 199X chill chill",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 33894041,
+        "ownerIdIdEcpt": "NrR9FQj6gvmMhJLxD9KXag==",
+        "userIdEcpt": "NrR9FQj6gvmMhJLxD9KXag==",
+        "signature": "📀𝓣𝓪𝓶𝔂 🧸",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 33894041,
+            "userIdEcpt": "NrR9FQj6gvmMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "📀𝓣𝓪𝓶𝔂 🧸",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 34747347,
+            "userIdEcpt": "ekk/snsRIvOMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "🎼𝙂𝙑.𝙉𝙞𝙘𝙤",
+            "gender": "Nam"
+          },
+          {
+            "userId": 36476745,
+            "userIdEcpt": "xalhii7tABOMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "🎼GV-Bo✨",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609139235795293",
+        "topic": "🍉🍉🍉🍉",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 34767993,
+        "ownerIdIdEcpt": "cJbq20siEq+MhJLxD9KXag==",
+        "userIdEcpt": "cJbq20siEq+MhJLxD9KXag==",
+        "signature": "🍉🍉🍉🍉",
+        "roomerSize": 1,
+        "members": [
+          {
+            "userId": 34767993,
+            "userIdEcpt": "cJbq20siEq+MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "🍉🍉🍉🍉",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609139646448978",
+        "topic": "🐺❤️😒😀🥹😆🔫😔🧧",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 27513278,
+        "ownerIdIdEcpt": "KrV2UvVGJgWMhJLxD9KXag==",
+        "userIdEcpt": "KrV2UvVGJgWMhJLxD9KXag==",
+        "signature": "⏤͟͟͞͞★🔥Bi⚡️",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 27513278,
+            "userIdEcpt": "KrV2UvVGJgWMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "⏤͟͟͞͞★🔥Bi⚡️",
+            "gender": "Nam"
+          },
+          {
+            "userId": 33980921,
+            "userIdEcpt": "pC/WJV4GV1GMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "☁︎ 松手ﾟ",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 28942973,
+            "userIdEcpt": "nOteBMwzcI2MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Tạ Lê ",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609139233569665",
+        "topic": "phòng Ông Hai 💥\ntreo ngủ 😴",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 42005665,
+        "ownerIdIdEcpt": "801oGpxKPWmMhJLxD9KXag==",
+        "userIdEcpt": "801oGpxKPWmMhJLxD9KXag==",
+        "signature": "Ông Hai_Chuche",
+        "roomerSize": 4,
+        "members": [
+          {
+            "userId": 42005665,
+            "userIdEcpt": "801oGpxKPWmMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Ông Hai_Chuche",
+            "gender": "Nam"
+          },
+          {
+            "userId": 39909383,
+            "userIdEcpt": "j6trcgKPDjeMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Cậu 3 Sài Thành",
+            "gender": "Nam"
+          },
+          {
+            "userId": 25392352,
+            "userIdEcpt": "EBAEQBnlW6qMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Ngânn_Chuche💋",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 24042499,
+            "userIdEcpt": "xBcSY6zl5bSMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Neigeee_chuche",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609128815665689",
+        "topic": "Trò chuyện+ghép đôi thiếu nam+nữ 💖💞💞",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 42418389,
+        "ownerIdIdEcpt": "qcpP3V3I2C2MhJLxD9KXag==",
+        "userIdEcpt": "qcpP3V3I2C2MhJLxD9KXag==",
+        "signature": "Minhdammecauca",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 42418389,
+            "userIdEcpt": "qcpP3V3I2C2MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Minhdammecauca",
+            "gender": "Nam"
+          },
+          {
+            "userId": 39016819,
+            "userIdEcpt": "8bge6hAT6wuMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Dâu nè 🍓",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609135899400883",
+        "topic": "quân sư tình yêu",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 22760983,
+        "ownerIdIdEcpt": "PDkrQH4hB6aMhJLxD9KXag==",
+        "userIdEcpt": "PDkrQH4hB6aMhJLxD9KXag==",
+        "signature": "Khang🦊",
+        "roomerSize": 8,
+        "members": [
+          {
+            "userId": 22760983,
+            "userIdEcpt": "PDkrQH4hB6aMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Khang🦊",
+            "gender": "Nam"
+          },
+          {
+            "userId": 41360241,
+            "userIdEcpt": "NYr1z9469f+MhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "pủm pủm pẹt pẹt",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 43026232,
+            "userIdEcpt": "2itl9e1LRyKMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Hew",
+            "gender": "Nam"
+          },
+          {
+            "userId": 43026190,
+            "userIdEcpt": "r29o7Gs8DauMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Youka",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609135899232997",
+        "topic": "Fan K-Pop",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 34373797,
+        "ownerIdIdEcpt": "HBgxZFwDFViMhJLxD9KXag==",
+        "userIdEcpt": "HBgxZFwDFViMhJLxD9KXag==",
+        "signature": "Shelby",
+        "roomerSize": 4,
+        "members": [
+          {
+            "userId": 34373797,
+            "userIdEcpt": "HBgxZFwDFViMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Shelby",
+            "gender": "Nam"
+          },
+          {
+            "userId": 42013847,
+            "userIdEcpt": "6XZiYJF5DHmMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Lạnh ôm ai ?",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 39461084,
+            "userIdEcpt": "LQh+311KAMiMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "hoangbbao",
+            "gender": "Nam"
+          },
+          {
+            "userId": 42966164,
+            "userIdEcpt": "IwfrLsySnY6MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "shin",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609138397156105",
+        "topic": "gọi vốn",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 42535305,
+        "ownerIdIdEcpt": "EQx1RpxLfNCMhJLxD9KXag==",
+        "userIdEcpt": "EQx1RpxLfNCMhJLxD9KXag==",
+        "signature": "ko bá khí k11",
+        "roomerSize": 7,
+        "members": [
+          {
+            "userId": 42535305,
+            "userIdEcpt": "EQx1RpxLfNCMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "ko bá khí k11",
+            "gender": "Nam"
+          },
+          {
+            "userId": 42413647,
+            "userIdEcpt": "RczdVXpI6weMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Chan bá khí",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 38839554,
+            "userIdEcpt": "QbT+tjcuhwmMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Boy cô đơn",
+            "gender": "Nam"
+          },
+          {
+            "userId": 36306372,
+            "userIdEcpt": "fyR2doTzKMaMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "A Ă Â B C D Đ E",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137576328906",
+        "topic": "miền tây dô đay 🌴🌴",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 39673006,
+        "ownerIdIdEcpt": "Fs59Tv69aJCMhJLxD9KXag==",
+        "userIdEcpt": "Fs59Tv69aJCMhJLxD9KXag==",
+        "signature": "Chon oiii🍫",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 39673006,
+            "userIdEcpt": "Fs59Tv69aJCMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Chon oiii🍫",
+            "gender": "Nam"
+          },
+          {
+            "userId": 42782033,
+            "userIdEcpt": "rcj7L/TmFeyMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "HắcLongTổngTài",
+            "gender": "Nam"
+          },
+          {
+            "userId": 37672521,
+            "userIdEcpt": "sN4p/1iVUueMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "phúc con",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609136317844066",
+        "topic": "Nch vv",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 42929566,
+        "ownerIdIdEcpt": "HZqthS9Ogo2MhJLxD9KXag==",
+        "userIdEcpt": "HZqthS9Ogo2MhJLxD9KXag==",
+        "signature": "Linhiu",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 42929566,
+            "userIdEcpt": "HZqthS9Ogo2MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Linhiu",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 43087855,
+            "userIdEcpt": "/3Tqh9vspbmMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Gia Cát Nam 👀",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137576343287",
+        "topic": "Hnoi là con đàn bà đỏng đảnh",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 33195387,
+        "ownerIdIdEcpt": "NsJTTlP7w+qMhJLxD9KXag==",
+        "userIdEcpt": "NsJTTlP7w+qMhJLxD9KXag==",
+        "signature": "Hyang",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 33195387,
+            "userIdEcpt": "NsJTTlP7w+qMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Hyang",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 41379028,
+            "userIdEcpt": "AzEwsqpEAJaMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "concá",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609136317024927",
+        "topic": "Những thành phố bạn từng đến 🌆",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 38358727,
+        "ownerIdIdEcpt": "JUK80Lafu0OMhJLxD9KXag==",
+        "userIdEcpt": "JUK80Lafu0OMhJLxD9KXag==",
+        "signature": "dâu cute",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 38358727,
+            "userIdEcpt": "JUK80Lafu0OMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "dâu cute",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 40725296,
+            "userIdEcpt": "+NWc9QyUhQOMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Slaz",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609136717793762",
+        "topic": "ghép đôi đê(cp chưa ny)",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 43069762,
+        "ownerIdIdEcpt": "MZ577eGJi22MhJLxD9KXag==",
+        "userIdEcpt": "MZ577eGJi22MhJLxD9KXag==",
+        "signature": "bé su",
+        "roomerSize": 1,
+        "members": [
+          {
+            "userId": 43069762,
+            "userIdEcpt": "MZ577eGJi22MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "bé su",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609125485625699",
+        "topic": "hỏi xoáy - đáp ngu🙂",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 32868899,
+        "ownerIdIdEcpt": "EbYNrRmHzruMhJLxD9KXag==",
+        "userIdEcpt": "EbYNrRmHzruMhJLxD9KXag==",
+        "signature": "𝙻𝚞𝚌𝚢 🇻🇳",
+        "roomerSize": 7,
+        "members": [
+          {
+            "userId": 32868899,
+            "userIdEcpt": "EbYNrRmHzruMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "𝙻𝚞𝚌𝚢 🇻🇳",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 33049522,
+            "userIdEcpt": "hf6Z1Up4cUGMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "𝙴𝚛𝚣𝚊 🇻🇳",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 39950859,
+            "userIdEcpt": "w2dmB7mFzmmMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "𝙽𝚊𝚝𝚜𝚞 🇻🇳",
+            "gender": "Nam"
+          },
+          {
+            "userId": 41655576,
+            "userIdEcpt": "NBCZlRp4XsCMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Gajeel 🇻🇳",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609135461143314",
+        "topic": "Treo",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 34355414,
+        "ownerIdIdEcpt": "XW9/QcU1X6uMhJLxD9KXag==",
+        "userIdEcpt": "XW9/QcU1X6uMhJLxD9KXag==",
+        "signature": "『Ma Đạo Tử』",
+        "roomerSize": 4,
+        "members": [
+          {
+            "userId": 34355414,
+            "userIdEcpt": "XW9/QcU1X6uMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "『Ma Đạo Tử』",
+            "gender": "Nam"
+          },
+          {
+            "userId": 35845061,
+            "userIdEcpt": "MH0byeOz8U2MhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "ђยא ȶʊ𝔯ȶ𝔩𝔢🐢",
+            "gender": "Nam"
+          },
+          {
+            "userId": 32284997,
+            "userIdEcpt": "n6yC0mlCFRGMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "_Hướng nụii 🌥✨",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 39028158,
+            "userIdEcpt": "cqyhrsf6Yb+MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "° Victor °",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609134228233630",
+        "topic": "Buonmotchut",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 42114030,
+        "ownerIdIdEcpt": "GtacQFqeo2+MhJLxD9KXag==",
+        "userIdEcpt": "GtacQFqeo2+MhJLxD9KXag==",
+        "signature": "•Nora•letta•",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 42114030,
+            "userIdEcpt": "GtacQFqeo2+MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "•Nora•letta•",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 41811263,
+            "userIdEcpt": "qG+YlyiRamCMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "💦💐KiennZ",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609123382012133",
+        "topic": "ngủ 1 ti😴",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 42761233,
+        "ownerIdIdEcpt": "StFFxx5m5YmMhJLxD9KXag==",
+        "userIdEcpt": "StFFxx5m5YmMhJLxD9KXag==",
+        "signature": "shark🦈",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 42761233,
+            "userIdEcpt": "StFFxx5m5YmMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "shark🦈",
+            "gender": "Nam"
+          },
+          {
+            "userId": 34467117,
+            "userIdEcpt": "/RdpSEYq482MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "bắp",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 33930367,
+            "userIdEcpt": "EKJX9nesu6KMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Hải Nữ",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609139226811278",
+        "topic": "=)) ngáo vl",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 36074778,
+        "ownerIdIdEcpt": "cv4KZL+VI1+MhJLxD9KXag==",
+        "userIdEcpt": "cv4KZL+VI1+MhJLxD9KXag==",
+        "signature": "cún i~cư",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 36074778,
+            "userIdEcpt": "cv4KZL+VI1+MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "cún i~cư",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 40090644,
+            "userIdEcpt": "cBIK+jr82L+MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "pk4t",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609136743806402",
+        "topic": "vào ghép đôi với kha",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 39544802,
+        "ownerIdIdEcpt": "jWmVvTfDGzWMhJLxD9KXag==",
+        "userIdEcpt": "jWmVvTfDGzWMhJLxD9KXag==",
+        "signature": "at",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 39544802,
+            "userIdEcpt": "jWmVvTfDGzWMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "at",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 41918472,
+            "userIdEcpt": "ksJdMSQ/WSGMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "lốp",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609134220886473",
+        "topic": "iu thỏ lắm",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 37173573,
+        "ownerIdIdEcpt": "zrHn9CG2BA6MhJLxD9KXag==",
+        "userIdEcpt": "zrHn9CG2BA6MhJLxD9KXag==",
+        "signature": "DK KHÁNH DZ",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 37173573,
+            "userIdEcpt": "zrHn9CG2BA6MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "DK KHÁNH DZ",
+            "gender": "Nam"
+          },
+          {
+            "userId": 34132498,
+            "userIdEcpt": "7PvMaf31T9yMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "bố của wibu",
+            "gender": "Nam"
+          },
+          {
+            "userId": 36589095,
+            "userIdEcpt": "qKrZJoHfDTyMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "ᵀⁱᵉᵘᵈᵃᵒᶜᵒⁿᵍᶜʰᵘᵃ",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137975292084",
+        "topic": "🚩 Bang Hội Nghệ An 🚩 Động Lươn 🚩",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 36905084,
+        "ownerIdIdEcpt": "ixy0Jxj2A2SMhJLxD9KXag==",
+        "userIdEcpt": "ixy0Jxj2A2SMhJLxD9KXag==",
+        "signature": "PopUp User ✈️",
+        "roomerSize": 1,
+        "members": [
+          {
+            "userId": 36905084,
+            "userIdEcpt": "ixy0Jxj2A2SMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "PopUp User ✈️",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137131488866",
+        "topic": "Chill Cuối Tuần🤫",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 33038066,
+        "ownerIdIdEcpt": "ZHmaRYkGoIKMhJLxD9KXag==",
+        "userIdEcpt": "ZHmaRYkGoIKMhJLxD9KXag==",
+        "signature": "Frost",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 33038066,
+            "userIdEcpt": "ZHmaRYkGoIKMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Frost",
+            "gender": "Nam"
+          },
+          {
+            "userId": 34135901,
+            "userIdEcpt": "9yymCqI94++MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "bri",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609139226809648",
+        "topic": "hii",
+        "classifyCode": "Chit_Chat",
+        "classifyLangKey": "GroupChat_Topic_ChitChat",
+        "source": "recommend",
+        "ownerId": 41914148,
+        "ownerIdIdEcpt": "cm42jcLsWVaMhJLxD9KXag==",
+        "userIdEcpt": "cm42jcLsWVaMhJLxD9KXag==",
+        "signature": "Dũng",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 41914148,
+            "userIdEcpt": "cm42jcLsWVaMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Dũng",
+            "gender": "Nam"
+          },
+          {
+            "userId": 37297500,
+            "userIdEcpt": "DqVI9QenF6aMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "°❀⋆Hà Lan.ೃ࿔",
+            "gender": "Nữ"
+          }
+        ]
+      }
+    ],
+    "Music": [
+      {
+        "roomId": "22609139652769792",
+        "topic": "tập nói",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 37529092,
+        "ownerIdIdEcpt": "PJFbxFtkbqKMhJLxD9KXag==",
+        "userIdEcpt": "PJFbxFtkbqKMhJLxD9KXag==",
+        "signature": "SAS_Su",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 37529092,
+            "userIdEcpt": "PJFbxFtkbqKMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "SAS_Su",
+            "gender": "Nam"
+          },
+          {
+            "userId": 36893003,
+            "userIdEcpt": "geRc899/PTiMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "SAS_datlee",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609123782498420",
+        "topic": "🎼Golden Voice 🎤 - 🎼GV🫧Banana🍌",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 40120820,
+        "ownerIdIdEcpt": "sgFNiB/jnjWMhJLxD9KXag==",
+        "userIdEcpt": "sgFNiB/jnjWMhJLxD9KXag==",
+        "signature": "🎼GV🫧Banana🍌",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 40120820,
+            "userIdEcpt": "sgFNiB/jnjWMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "🎼GV🫧Banana🍌",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 37832881,
+            "userIdEcpt": "3+0DgQPbvtqMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "🎼GV. Conan🍁",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609139652998538",
+        "topic": "Đêm Thu Hà Thành & Những Cáu Chuyện Chưa Kể....",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 39598738,
+        "ownerIdIdEcpt": "Dpt2yEXuUfaMhJLxD9KXag==",
+        "userIdEcpt": "Dpt2yEXuUfaMhJLxD9KXag==",
+        "signature": "sơn khê",
+        "roomerSize": 1,
+        "members": [
+          {
+            "userId": 39598738,
+            "userIdEcpt": "Dpt2yEXuUfaMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "sơn khê",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609138003104848",
+        "topic": "nch",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 37839148,
+        "ownerIdIdEcpt": "jIN3xImwiV6MhJLxD9KXag==",
+        "userIdEcpt": "jIN3xImwiV6MhJLxD9KXag==",
+        "signature": "💿𝙇𝙊𝙉𝙂",
+        "roomerSize": 4,
+        "members": [
+          {
+            "userId": 37839148,
+            "userIdEcpt": "jIN3xImwiV6MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "💿𝙇𝙊𝙉𝙂",
+            "gender": "Nam"
+          },
+          {
+            "userId": 34447007,
+            "userIdEcpt": "SLccW8q/YIeMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "📀𝑨𝒓𝒊𝒆𝒍💍",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 38207868,
+            "userIdEcpt": "CKm8DxQlAU2MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "ㅤㅤㅤ",
+            "gender": "Nam"
+          },
+          {
+            "userId": 38566122,
+            "userIdEcpt": "0DZcj9flREKMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "\"ljee\" 💋",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137577760862",
+        "topic": "Bữa tiệc Âm nhạc của tôi 🎵",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 30346262,
+        "ownerIdIdEcpt": "M5enV3EOxqOMhJLxD9KXag==",
+        "userIdEcpt": "M5enV3EOxqOMhJLxD9KXag==",
+        "signature": "nhớ mỗi ah",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 30346262,
+            "userIdEcpt": "M5enV3EOxqOMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "nhớ mỗi ah",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 30326644,
+            "userIdEcpt": "Tb96vscEOV6MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "🔥Trương Phương",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609139254575390",
+        "topic": "ghép đôiii",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 34083090,
+        "ownerIdIdEcpt": "Zr6WruM9pY6MhJLxD9KXag==",
+        "userIdEcpt": "Zr6WruM9pY6MhJLxD9KXag==",
+        "signature": "cô giáo mầmnon",
+        "roomerSize": 18,
+        "members": [
+          {
+            "userId": 34083090,
+            "userIdEcpt": "Zr6WruM9pY6MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "cô giáo mầmnon",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 35489103,
+            "userIdEcpt": "NrFYtXXBKPeMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "hoa nổi loạn😈",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 40940952,
+            "userIdEcpt": "vuqFks8acfSMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Pamm",
+            "gender": "Nam"
+          },
+          {
+            "userId": 42803332,
+            "userIdEcpt": "i0hz3JkxHCKMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "clmm",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609136739093777",
+        "topic": "xàm xí",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 41178677,
+        "ownerIdIdEcpt": "r3TLJfiFmd+MhJLxD9KXag==",
+        "userIdEcpt": "r3TLJfiFmd+MhJLxD9KXag==",
+        "signature": "mèo us",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 41178677,
+            "userIdEcpt": "r3TLJfiFmd+MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "mèo us",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 39595238,
+            "userIdEcpt": "kTU8uYNih12MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Ng Nam",
+            "gender": "Nam"
+          },
+          {
+            "userId": 38183274,
+            "userIdEcpt": "bJXp6AUO+baMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "🎼GV. Celly 🦭",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609138414165623",
+        "topic": "ghép đôi (thiếu gái)",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 41066923,
+        "ownerIdIdEcpt": "rx7VJkYZEnWMhJLxD9KXag==",
+        "userIdEcpt": "rx7VJkYZEnWMhJLxD9KXag==",
+        "signature": "2k9",
+        "roomerSize": 9,
+        "members": [
+          {
+            "userId": 41066923,
+            "userIdEcpt": "rx7VJkYZEnWMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "2k9",
+            "gender": "Nam"
+          },
+          {
+            "userId": 28926562,
+            "userIdEcpt": "aD4djO686nWMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "1m9",
+            "gender": "Nam"
+          },
+          {
+            "userId": 37745579,
+            "userIdEcpt": "doQn93wj7bSMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "hy",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 38667064,
+            "userIdEcpt": "a7mURcLDCJGMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Thu Ha",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137995773679",
+        "topic": "hát",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 42025379,
+        "ownerIdIdEcpt": "//KWI4YoHiqMhJLxD9KXag==",
+        "userIdEcpt": "//KWI4YoHiqMhJLxD9KXag==",
+        "signature": "xEnricky",
+        "roomerSize": 8,
+        "members": [
+          {
+            "userId": 42025379,
+            "userIdEcpt": "//KWI4YoHiqMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "xEnricky",
+            "gender": "Nam"
+          },
+          {
+            "userId": 28599673,
+            "userIdEcpt": "9AKptleFfECMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "✨~𝓜𝓵𝓮𝓶•💦",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 39051157,
+            "userIdEcpt": "lEhfVEYaW++MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "𝕯𝖚x𝖎★",
+            "gender": "Nam"
+          },
+          {
+            "userId": 34446050,
+            "userIdEcpt": "p6B+yjnf4DWMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Pon Pon🎤🖤",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609127137523265",
+        "topic": "(Không tên)",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 27139865,
+        "ownerIdIdEcpt": "oyDkrw/KHCiMhJLxD9KXag==",
+        "userIdEcpt": "oyDkrw/KHCiMhJLxD9KXag==",
+        "signature": "Celina©",
+        "roomerSize": 8,
+        "members": [
+          {
+            "userId": 27139865,
+            "userIdEcpt": "oyDkrw/KHCiMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Celina©",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 34629276,
+            "userIdEcpt": "gdxWOKJTSoyMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Người lạ",
+            "gender": "Nam"
+          },
+          {
+            "userId": 36571194,
+            "userIdEcpt": "b9NVtJZfp8yMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "MyMy",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 38071153,
+            "userIdEcpt": "IXUyAdyn7VuMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Thảo Ly🍓",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609125034362434",
+        "topic": "phòng treo ngủ . ngủ dậy nhớ chào",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 41401434,
+        "ownerIdIdEcpt": "9wS6x82DjNGMhJLxD9KXag==",
+        "userIdEcpt": "9wS6x82DjNGMhJLxD9KXag==",
+        "signature": "hâm và vô tư",
+        "roomerSize": 7,
+        "members": [
+          {
+            "userId": 41401434,
+            "userIdEcpt": "9wS6x82DjNGMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "hâm và vô tư",
+            "gender": "Nam"
+          },
+          {
+            "userId": 38674399,
+            "userIdEcpt": "7DqhPrzk6dOMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "S_TiMO",
+            "gender": "Nam"
+          },
+          {
+            "userId": 39760901,
+            "userIdEcpt": "FI1ol+/Sh6SMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "xấu nhưng đẹp",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 36454707,
+            "userIdEcpt": "LodWh6HXU06MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "ʚᯓLunaa",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609138002120098",
+        "topic": "CP  vs  QTV treo ngủ",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 34414098,
+        "ownerIdIdEcpt": "cFCPytRUEH6MhJLxD9KXag==",
+        "userIdEcpt": "cFCPytRUEH6MhJLxD9KXag==",
+        "signature": "🔮Vinh Nguyễn?",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 34414098,
+            "userIdEcpt": "cFCPytRUEH6MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "🔮Vinh Nguyễn?",
+            "gender": "Nam"
+          },
+          {
+            "userId": 37835647,
+            "userIdEcpt": "VFgiyT7ajNKMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "Orange",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 42457372,
+            "userIdEcpt": "RV8DI5lgVNiMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "ᰔᩚ⚡ςậμςả_💢",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137556449692",
+        "topic": "len nch 🐦🦋",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 41491592,
+        "ownerIdIdEcpt": "bd1BBVnACiqMhJLxD9KXag==",
+        "userIdEcpt": "bd1BBVnACiqMhJLxD9KXag==",
+        "signature": "Thúy Phương ",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 41491592,
+            "userIdEcpt": "bd1BBVnACiqMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Thúy Phương ",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 42556628,
+            "userIdEcpt": "MAfwDOEsnfmMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "chồng em🫰",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609136291796828",
+        "topic": "uncle 99 Chill day?!",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 35629028,
+        "ownerIdIdEcpt": "vrefaaZ/LaeMhJLxD9KXag==",
+        "userIdEcpt": "vrefaaZ/LaeMhJLxD9KXag==",
+        "signature": "TOM🎙️",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 35629028,
+            "userIdEcpt": "vrefaaZ/LaeMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "TOM🎙️",
+            "gender": "Nam"
+          },
+          {
+            "userId": 35835817,
+            "userIdEcpt": "dJ4/T4reLcCMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Phương Dung 🩷",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609136318841771",
+        "topic": "Pi",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 37256671,
+        "ownerIdIdEcpt": "f5RESNKQtveMhJLxD9KXag==",
+        "userIdEcpt": "f5RESNKQtveMhJLxD9KXag==",
+        "signature": "Pi",
+        "roomerSize": 3,
+        "members": [
+          {
+            "userId": 37256671,
+            "userIdEcpt": "f5RESNKQtveMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Pi",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 37157519,
+            "userIdEcpt": "G5PYXiZl26WMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "雅 ౨ʙᴀᴇɴᴅৎ ㊃",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 36076918,
+            "userIdEcpt": "Ok4Fd/+DQ2+MhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "Kunn 777🔥",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609137130464817",
+        "topic": "Hát ru",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 42104817,
+        "ownerIdIdEcpt": "l0JQHuGX63eMhJLxD9KXag==",
+        "userIdEcpt": "l0JQHuGX63eMhJLxD9KXag==",
+        "signature": "💿Rùa Labati",
+        "roomerSize": 1,
+        "members": [
+          {
+            "userId": 42104817,
+            "userIdEcpt": "l0JQHuGX63eMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "💿Rùa Labati",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609135458681714",
+        "topic": "người xin hãy nhẹ nhàng với con..",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 42886014,
+        "ownerIdIdEcpt": "TcwiPhfHFTaMhJLxD9KXag==",
+        "userIdEcpt": "TcwiPhfHFTaMhJLxD9KXag==",
+        "signature": "phương Linh ",
+        "roomerSize": 1,
+        "members": [
+          {
+            "userId": 42886014,
+            "userIdEcpt": "TcwiPhfHFTaMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "phương Linh ",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609135904148863",
+        "topic": "Deckquantam",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 38215663,
+        "ownerIdIdEcpt": "BTMNoZWct1eMhJLxD9KXag==",
+        "userIdEcpt": "BTMNoZWct1eMhJLxD9KXag==",
+        "signature": "Deckquantam",
+        "roomerSize": 7,
+        "members": [
+          {
+            "userId": 38215663,
+            "userIdEcpt": "BTMNoZWct1eMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Deckquantam",
+            "gender": "Nam"
+          },
+          {
+            "userId": 32641207,
+            "userIdEcpt": "hCQ7ZeZ1YFmMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "lùn nhất trg",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 34943095,
+            "userIdEcpt": "VCpU4SouLayMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "🐹 Nguyên 🐹",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 41197023,
+            "userIdEcpt": "73wsKuC9YqaMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "老公",
+            "gender": "Nam"
+          }
+        ]
+      },
+      {
+        "roomId": "22609138841172983",
+        "topic": "VÀO= KICK | KHÔNG NHẬN AI CẢ",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 39562483,
+        "ownerIdIdEcpt": "qhoxtmRlSjWMhJLxD9KXag==",
+        "userIdEcpt": "qhoxtmRlSjWMhJLxD9KXag==",
+        "signature": "Callme✧𝐊𝐞𝐣𝐨",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 39562483,
+            "userIdEcpt": "qhoxtmRlSjWMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Callme✧𝐊𝐞𝐣𝐨",
+            "gender": "Nam"
+          },
+          {
+            "userId": 40532977,
+            "userIdEcpt": "EPv/953KyriMhJLxD9KXag==",
+            "role": "MANAGER",
+            "signature": "𓆩CαℓℓⓂe̶ ̶ᴴí𓆪",
+            "gender": "Nữ"
+          }
+        ]
+      },
+      {
+        "roomId": "22609135874032149",
+        "topic": "em🎧",
+        "classifyCode": "Music",
+        "classifyLangKey": "GroupChat_Topic_Music",
+        "source": "recommend",
+        "ownerId": 40187849,
+        "ownerIdIdEcpt": "PrK9hbmV4d6MhJLxD9KXag==",
+        "userIdEcpt": "PrK9hbmV4d6MhJLxD9KXag==",
+        "signature": "ℍ𝕚𝕞🌷",
+        "roomerSize": 2,
+        "members": [
+          {
+            "userId": 40187849,
+            "userIdEcpt": "PrK9hbmV4d6MhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "ℍ𝕚𝕞🌷",
+            "gender": "Nữ"
+          },
+          {
+            "userId": 33130654,
+            "userIdEcpt": "FpNyy7/BSROMhJLxD9KXag==",
+            "role": "MEMBER",
+            "signature": "love 😔💔",
+            "gender": "Nữ"
+          }
+        ]
+      }
+    ],
+    "Game": [
+      {
+        "roomId": "22609138842621774",
+        "topic": "vô iêu ghép đôi cho💕",
+        "classifyCode": "Game",
+        "classifyLangKey": "GroupChat_Topic_Game",
+        "source": "recommend",
+        "ownerId": 36664874,
+        "ownerIdIdEcpt": "w1UxFWvlqumMhJLxD9KXag==",
+        "userIdEcpt": "w1UxFWvlqumMhJLxD9KXag==",
+        "signature": "Lốp xịn💕",
+        "roomerSize": 1,
+        "members": [
+          {
+            "userId": 36664874,
+            "userIdEcpt": "w1UxFWvlqumMhJLxD9KXag==",
+            "role": "MASTER",
+            "signature": "Lốp xịn💕",
+            "gender": "Nữ"
+          }
+        ]
+      }
+    ]
+  }
+}

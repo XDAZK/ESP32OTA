@@ -7,9 +7,9 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
+#include <vector>
 
 // ================= CONFIG =================
-// Version được định nghĩa từ build flag hoặc giá trị mặc định
 #ifndef CURRENT_FIRMWARE_VERSION
 #define CURRENT_FIRMWARE_VERSION "2026.05.31.211129"
 #endif
@@ -22,13 +22,11 @@ const char* WIFI_PASS = "12345679";
 
 // ================= OTA ====================
 const char* VERSION_URL = "https://xdazk.github.io/ESP32OTA/latest.json";
-const unsigned long OTA_CHECK_INTERVAL = 60000; // Kiểm tra OTA mỗi 60 giây
+const unsigned long OTA_CHECK_INTERVAL = 120000; // Kiểm tra OTA mỗi 2 phút
 
 // ================= OLED ===================
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
-
-// Chân I2C (Mặc định bạn dùng 5 và 4, nếu chuyển sang 21 và 22 thì đổi tại đây)
 #define OLED_SDA 5
 #define OLED_SCL 4
 #define OLED_RESET -1
@@ -36,7 +34,31 @@ const unsigned long OTA_CHECK_INTERVAL = 60000; // Kiểm tra OTA mỗi 60 giây
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 bool oledAvailable = false;
 
-void showOLED(String line1, String line2 = "", String line3 = "")
+// ================= POPUP GLOBAL API CONFIG =================
+const char* POPUP_HOST          = "api-b.popupglobal.ai";
+const char* POPUP_APP_ID        = "10000001";
+const char* POPUP_DEVICE_ID     = "087A136A-5BE1-42E4-A785-0BE3B4F831FB";
+const char* POPUP_FIXED_TOKEN   = "31rSScyqXLVcT/x6hpFNNu9+egxyAoIJaYyU0oK3RFMnbrYiwxhS8+YsUS4Dm4+WSLI95wDD5Wg18YBEGHCQ22WaWj13kG7bGiJbY1QoT/mkmPbKsaSbgUTNmpsV0YYnJAZ+fIJHgK0=";
+
+// API Signatures
+const char* SIGN_HOT_LIST       = "A747978795FD1A4C595A9C93AFB03CE684975C99";
+const char* SIGN_RECOMMEND_LIST = "3B0133ED571B4899E2E2ED948F123ABBC88C1CB8";
+const char* SIGN_JOIN           = "EACF2BD38FF71C959444155A23724536FF7A8D2F";
+const char* SIGN_APPLY_PK       = "6BF40A58F9ECAC81DC6F4473864868B9DB06D1FB";
+const char* SIGN_EXIT           = "90000B6D88742B8FD868EC99A3BDE3BF5879E867";
+
+// Cấu hình vòng lặp
+const unsigned long LOOP_INTERVAL_MS = 30000; // Nghỉ 30s giữa các vòng quét
+const unsigned long ROOM_DELAY_MS    = 300;   // Delay 300ms giữa mỗi thao tác phòng
+
+struct RoomInfo {
+    String roomId;
+    String topic;
+    String classifyCode;
+};
+
+// ================= OLED HELPERS =================
+void showOLED(String line1, String line2 = "", String line3 = "", String line4 = "")
 {
     if (!oledAvailable) return;
 
@@ -53,10 +75,13 @@ void showOLED(String line1, String line2 = "", String line3 = "")
     display.setCursor(0, 32);
     display.println(line3);
 
+    display.setCursor(0, 48);
+    display.println(line4);
+
     display.display();
 }
 
-void updateOLEDClock(String clockStr) 
+void updateOLEDStatus(String statusStr, int currentRoom = 0, int totalRooms = 0) 
 {
     if (!oledAvailable) return;
 
@@ -64,10 +89,15 @@ void updateOLEDClock(String clockStr)
     display.setTextSize(1);
     display.setTextColor(SSD1306_WHITE);
     display.setCursor(0, 48);
-    display.println(clockStr);
+    if (totalRooms > 0) {
+        display.printf("[%d/%d] %s", currentRoom, totalRooms, statusStr.c_str());
+    } else {
+        display.println(statusStr);
+    }
     display.display();
 }
 
+// ================= WIFI & OTA =================
 bool connectWifi(int timeoutSeconds = 15)
 {
     if (WiFi.status() == WL_CONNECTED) return true;
@@ -86,21 +116,20 @@ bool connectWifi(int timeoutSeconds = 15)
         delay(500);
         Serial.print(".");
         retry++;
-        showOLED("Connecting WiFi", "SSID: " + String(WIFI_SSID), "Retry: " + String(retry));
     }
 
     if (WiFi.status() == WL_CONNECTED)
     {
         Serial.println("\n[WiFi] Connected successfully!");
         Serial.println("[WiFi] IP Address: " + WiFi.localIP().toString());
-        showOLED("WiFi Connected!", "IP: " + WiFi.localIP().toString());
+        showOLED("WiFi Connected!", "IP: " + WiFi.localIP().toString(), "Popup Bot Ready");
         delay(1000);
         return true;
     }
     else
     {
-        Serial.println("\n[WiFi] Connection Failed (Timeout)!");
-        showOLED("WiFi Failed!", "Will retry later...");
+        Serial.println("\n[WiFi] Connection Failed!");
+        showOLED("WiFi Failed!", "Will retry...");
         delay(1000);
         return false;
     }
@@ -110,190 +139,340 @@ void checkOTA()
 {
     if (WiFi.status() != WL_CONNECTED) return;
 
-    Serial.println("\n=================================");
-    Serial.println("[OTA] Checking for new firmware...");
-    Serial.println("=================================");
-    showOLED("Checking OTA...");
-
+    Serial.println("\n[OTA] Checking for new firmware...");
     WiFiClientSecure client;
-    client.setInsecure(); // Bỏ qua xác thực SSL certificate của GitHub Pages
+    client.setInsecure();
 
     HTTPClient http;
     http.setFollowRedirects(HTTPC_STRICT_FOLLOW_REDIRECTS);
-    http.setTimeout(10000); // 10s timeout
+    http.setTimeout(10000);
 
-    if (!http.begin(client, VERSION_URL))
-    {
-        Serial.println("[OTA] Cannot connect to VERSION_URL");
-        showOLED("OTA Error", "Connect Failed");
-        return;
-    }
+    if (!http.begin(client, VERSION_URL)) return;
 
     int httpCode = http.GET();
-    if (httpCode != HTTP_CODE_OK)
+    if (httpCode == HTTP_CODE_OK)
     {
-        Serial.printf("[OTA] HTTP Error fetching JSON: %d\n", httpCode);
-        showOLED("OTA Error", "HTTP: " + String(httpCode));
-        http.end();
-        return;
-    }
-
-    String payload = http.getString();
-    http.end();
-
-    JsonDocument doc;
-    DeserializationError error = deserializeJson(doc, payload);
-    if (error)
-    {
-        Serial.printf("[OTA] JSON parse error: %s\n", error.c_str());
-        showOLED("JSON Error", error.c_str());
-        return;
-    }
-
-    String serverVersion = doc["version"].as<String>();
-    String firmwareUrl = doc["firmware"].as<String>();
-
-    Serial.println("[OTA] Current Version : " + CURRENT_VERSION);
-    Serial.println("[OTA] Server Version  : " + serverVersion);
-    Serial.println("[OTA] Firmware URL    : " + firmwareUrl);
-
-    if (serverVersion.length() == 0 || serverVersion == CURRENT_VERSION)
-    {
-        Serial.println("[OTA] Already running the latest version.");
-        showOLED("Firmware Up-to-date", "Ver: " + CURRENT_VERSION);
-        return;
-    }
-
-    // Phát hiện firmware mới
-    Serial.println("[OTA] Found new version! Starting OTA update process...");
-    showOLED("New Version Found!", "Ver: " + serverVersion, "Downloading...");
-    delay(1500);
-
-    httpUpdate.onStart([]() {
-        Serial.println("[OTA] Update process started...");
-        showOLED("OTA Starting...");
-    });
-
-    httpUpdate.onProgress([](int current, int total) {
-        int percent = (total > 0) ? ((current * 100) / total) : 0;
-        Serial.printf("[OTA] Progress: %d%%\n", percent);
-
-        if (oledAvailable)
+        String payload = http.getString();
+        JsonDocument doc;
+        if (!deserializeJson(doc, payload))
         {
-            display.clearDisplay();
-            display.setTextSize(2);
-            display.setTextColor(SSD1306_WHITE);
-            display.setCursor(0, 10);
-            display.print("OTA UPDATE");
+            String serverVersion = doc["version"].as<String>();
+            String firmwareUrl = doc["firmware"].as<String>();
 
-            display.setCursor(0, 38);
-            display.printf("%d %%", percent);
-            display.display();
+            if (serverVersion.length() > 0 && serverVersion != CURRENT_VERSION)
+            {
+                Serial.println("[OTA] Found new version: " + serverVersion);
+                showOLED("OTA Updating...", "Ver: " + serverVersion);
+                t_httpUpdate_return ret = httpUpdate.update(client, firmwareUrl);
+            }
         }
-    });
-
-    httpUpdate.onEnd([]() {
-        Serial.println("[OTA] Download & Flash Complete! Rebooting now...");
-        showOLED("OTA Success!", "Rebooting...");
-    });
-
-    httpUpdate.onError([](int err) {
-        Serial.printf("[OTA] Error Code: %d\n", err);
-    });
-
-    // Thực hiện nạp OTA (tự động reboot khi hoàn tất)
-    t_httpUpdate_return ret = httpUpdate.update(client, firmwareUrl);
-
-    switch (ret)
-    {
-        case HTTP_UPDATE_FAILED:
-            Serial.printf("[OTA] UPDATE FAILED (%d): %s\n", httpUpdate.getLastError(), httpUpdate.getLastErrorString().c_str());
-            showOLED("OTA Failed!", httpUpdate.getLastErrorString());
-            break;
-
-        case HTTP_UPDATE_NO_UPDATES:
-            Serial.println("[OTA] HTTP_UPDATE_NO_UPDATES");
-            showOLED("No Updates");
-            break;
-
-        case HTTP_UPDATE_OK:
-            Serial.println("[OTA] Update Success!");
-            break;
     }
+    http.end();
 }
 
+// ================= POPUP GLOBAL API IMPLEMENTATION =================
+
+// 1. API Login -> Lấy dynamic token
+String popupLogin(WiFiClientSecure& client)
+{
+    Serial.println("\n[1] Gọi API Login...");
+    showOLED("Popup Global Bot", "Step 1: Login...", "Getting Token...");
+
+    HTTPClient http;
+    http.begin(client, "https://api-b.popupglobal.ai/login/info");
+    http.addHeader("app-id", POPUP_APP_ID);
+    http.addHeader("device-id", POPUP_DEVICE_ID);
+    http.addHeader("x-auth-token", POPUP_FIXED_TOKEN);
+    http.setTimeout(10000);
+
+    int httpCode = http.POST("");
+    String token = "";
+
+    if (httpCode == HTTP_CODE_OK)
+    {
+        String payload = http.getString();
+        JsonDocument doc;
+        DeserializationError err = deserializeJson(doc, payload);
+        if (!err) {
+            token = doc["data"]["token"].as<String>();
+            Serial.printf("[+] Login OK! Token: %s...\n", token.substring(0, 30).c_str());
+        } else {
+            Serial.printf("[-] JSON parse error: %s\n", err.c_str());
+        }
+    }
+    else
+    {
+        Serial.printf("[-] Login Failed! HTTP code: %d\n", httpCode);
+    }
+
+    http.end();
+    return token;
+}
+
+// 2. API Quét danh sách phòng HOT
+std::vector<RoomInfo> popupGetHotRooms(WiFiClientSecure& client, const String& token)
+{
+    std::vector<RoomInfo> rooms;
+    Serial.println("[2] Quét danh sách phòng HOT...");
+    showOLED("Popup Global Bot", "Step 2: Fetching", "Hot Rooms List...");
+
+    HTTPClient http;
+    http.begin(client, "https://api-b.popupglobal.ai/chat/room/hot/list");
+    http.addHeader("app-id", POPUP_APP_ID);
+    http.addHeader("device-id", POPUP_DEVICE_ID);
+    http.addHeader("api-sign", SIGN_HOT_LIST);
+    http.addHeader("x-auth-token", token);
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    http.setTimeout(10000);
+
+    int httpCode = http.POST("classifyCodeId=0");
+    if (httpCode == HTTP_CODE_OK)
+    {
+        String payload = http.getString();
+        JsonDocument doc;
+        DeserializationError err = deserializeJson(doc, payload);
+        if (!err) {
+            JsonArray list = doc["data"]["list"].as<JsonArray>();
+            for (JsonObject r : list) {
+                RoomInfo info;
+                info.roomId = r["roomId"].as<String>();
+                info.topic = r["topic"].as<String>();
+                info.classifyCode = r["classifyDTO"]["classifyCode"].as<String>();
+                if (info.roomId.length() > 0) {
+                    rooms.push_back(info);
+                }
+            }
+            Serial.printf("[+] Tải được %d phòng HOT!\n", (int)rooms.size());
+        }
+    }
+    else
+    {
+        Serial.printf("[-] Lỗi lấy Hot Rooms! HTTP code: %d\n", httpCode);
+    }
+
+    http.end();
+    return rooms;
+}
+
+// 3. API Tham gia phòng (Join)
+bool popupJoinRoom(WiFiClientSecure& client, const String& token, const String& roomId)
+{
+    HTTPClient http;
+    http.begin(client, "https://api-b.popupglobal.ai/chat/room/join");
+    http.addHeader("app-id", POPUP_APP_ID);
+    http.addHeader("device-id", POPUP_DEVICE_ID);
+    http.addHeader("api-sign", SIGN_JOIN);
+    http.addHeader("x-auth-token", token);
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    http.setTimeout(8000);
+
+    String body = "roomId=" + roomId + "&source=14";
+    int httpCode = http.POST(body);
+    bool success = false;
+
+    if (httpCode == HTTP_CODE_OK) {
+        String payload = http.getString();
+        JsonDocument doc;
+        if (!deserializeJson(doc, payload)) {
+            success = (doc["code"].as<int>() == 10001) || doc["success"].as<bool>();
+        }
+    }
+
+    http.end();
+    return success;
+}
+
+// 4. API Mở PK (playType=1)
+bool popupApplyPK(WiFiClientSecure& client, const String& token, const String& roomId)
+{
+    HTTPClient http;
+    http.begin(client, "https://api-b.popupglobal.ai/chat/room/apply/party/model");
+    http.addHeader("app-id", POPUP_APP_ID);
+    http.addHeader("device-id", POPUP_DEVICE_ID);
+    http.addHeader("api-sign", SIGN_APPLY_PK);
+    http.addHeader("x-auth-token", token);
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    http.setTimeout(8000);
+
+    String body = "playType=1&roomId=" + roomId;
+    int httpCode = http.POST(body);
+    bool success = false;
+
+    if (httpCode == HTTP_CODE_OK) {
+        String payload = http.getString();
+        JsonDocument doc;
+        if (!deserializeJson(doc, payload)) {
+            success = (doc["code"].as<int>() == 10001) || doc["success"].as<bool>();
+        }
+    }
+
+    http.end();
+    return success;
+}
+
+// 5. API Thoát phòng (Exit)
+bool popupExitRoom(WiFiClientSecure& client, const String& token, const String& roomId)
+{
+    HTTPClient http;
+    http.begin(client, "https://api-b.popupglobal.ai/chat/room/exit");
+    http.addHeader("app-id", POPUP_APP_ID);
+    http.addHeader("device-id", POPUP_DEVICE_ID);
+    http.addHeader("api-sign", SIGN_EXIT);
+    http.addHeader("x-auth-token", token);
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    http.setTimeout(8000);
+
+    String body = "roomId=" + roomId;
+    int httpCode = http.POST(body);
+    bool success = false;
+
+    if (httpCode == HTTP_CODE_OK) {
+        String payload = http.getString();
+        JsonDocument doc;
+        if (!deserializeJson(doc, payload)) {
+            success = (doc["code"].as<int>() == 10001) || doc["success"].as<bool>();
+        }
+    }
+
+    http.end();
+    return success;
+}
+
+// 6. Thực hiện chuỗi Join -> Mở PK -> Thoát phòng
+void processAllRoomsPipeline(WiFiClientSecure& client, const String& token, const std::vector<RoomInfo>& rooms)
+{
+    Serial.printf("\n===================================================\n");
+    Serial.printf("  🚀 BẮT ĐẦU CHUỖI [JOIN ➔ PK ➔ THOÁT] (%d PHÒNG)\n", (int)rooms.size());
+    Serial.printf("===================================================\n");
+
+    int successCount = 0;
+
+    for (size_t i = 0; i < rooms.size(); i++)
+    {
+        const RoomInfo& r = rooms[i];
+
+        // Cập nhật OLED
+        showOLED("Popup Auto PK Bot", 
+                 "Room: " + r.roomId, 
+                 "Topic: " + r.topic.substring(0, 16),
+                 "[" + String(i + 1) + "/" + String(rooms.size()) + "] Processing...");
+
+        // Bước 1: Join
+        bool joinOk = popupJoinRoom(client, token, r.roomId);
+
+        // Bước 2: Apply PK
+        bool pkOk = popupApplyPK(client, token, r.roomId);
+
+        // Bước 3: Exit
+        bool exitOk = popupExitRoom(client, token, r.roomId);
+
+        if (joinOk && pkOk) successCount++;
+
+        Serial.printf("[%d/%d] Join: %s | PK: %s | Exit: %s -> %s (%s)\n",
+                      (int)(i + 1), (int)rooms.size(),
+                      joinOk ? "✅" : "❌",
+                      pkOk ? "⚔️ OK" : "⚠️ Fail",
+                      exitOk ? "🚪 OK" : "❌ Fail",
+                      r.roomId.c_str(),
+                      r.topic.c_str());
+
+        delay(ROOM_DELAY_MS);
+    }
+
+    Serial.printf("\n[✔] Hoàn tất vòng: %d/%d phòng thành công!\n", successCount, (int)rooms.size());
+    showOLED("Vong Lap Hoan Tat!", 
+             "Thanh cong: " + String(successCount) + "/" + String(rooms.size()),
+             "Nghi " + String(LOOP_INTERVAL_MS / 1000) + "s...");
+}
+
+// ================= ARDUINO SETUP & LOOP =================
 void setup()
 {
-    // 1. Khởi động Serial ngay đầu tiên và chờ ổn định
     Serial.begin(115200);
-    delay(1000); 
+    delay(1000);
 
     Serial.println("\n\n========================================");
-    Serial.println("       ESP32 OTA SYSTEM STARTING        ");
+    Serial.println("       ESP32 POPUP GLOBAL AUTO BOT      ");
     Serial.println("========================================");
     Serial.printf("Firmware Version: %s\n", CURRENT_VERSION.c_str());
-    Serial.printf("Built At        : %s %s\n", __DATE__, __TIME__);
     Serial.println("========================================");
 
-    // 2. Khởi tạo I2C và OLED an toàn (tránh treo chip nếu OLED không có)
+    // Khởi tạo OLED
     Wire.begin(OLED_SDA, OLED_SCL);
-    Wire.setTimeOut(1000); // Timeout 1s tránh lock bus
+    Wire.setTimeOut(1000);
 
-    // periphBegin = false để không tự ý reset chân I2C
     if (display.begin(SSD1306_SWITCHCAPVCC, 0x3C, false, false))
     {
         oledAvailable = true;
-        Serial.println("[OLED] SSD1306 Display initialized successfully.");
-        showOLED("ESP32 OTA System", "Ver: " + CURRENT_VERSION, "Booting...");
+        showOLED("ESP32 Popup Bot", "Ver: " + CURRENT_VERSION, "Booting...");
     }
     else
     {
         oledAvailable = false;
-        Serial.println("[OLED] WARNING: SSD1306 Display not detected (Check wiring SDA=5, SCL=4).");
-        Serial.println("[OLED] System will continue running without OLED display.");
+        Serial.println("[OLED] Warning: Display not detected. Continuing via Serial.");
     }
     delay(1000);
 
-    // 3. Kết nối WiFi và kiểm tra OTA ngay khi khởi động
-    if (connectWifi())
-    {
-        checkOTA();
-    }
+    // Kết nối WiFi
+    connectWifi();
 }
 
 void loop()
 {
-    static unsigned long lastCheck = 0;
-    static unsigned long lastClockLog = 0;
+    static unsigned long lastOTACheck = 0;
+    static int roundCount = 1;
 
-    // 1. Cập nhật Uptime mỗi giây
-    if (millis() - lastClockLog >= 1000)
+    // 1. Kiểm tra kết nối WiFi
+    if (WiFi.status() != WL_CONNECTED)
     {
-        lastClockLog = millis();
-
-        unsigned long totalSeconds = millis() / 1000;
-        unsigned long seconds = totalSeconds % 60;
-        unsigned long minutes = (totalSeconds / 60) % 60;
-        unsigned long hours = (totalSeconds / 3600);
-
-        char clockBuffer[30];
-        snprintf(clockBuffer, sizeof(clockBuffer), "Uptime: %02lu:%02lu:%02lu", hours, minutes, seconds);
-
-        Serial.println(clockBuffer);
-        updateOLEDClock(String(clockBuffer));
+        connectWifi();
+        delay(2000);
+        return;
     }
 
     // 2. Kiểm tra OTA định kỳ
-    if (millis() - lastCheck >= OTA_CHECK_INTERVAL)
+    if (millis() - lastOTACheck >= OTA_CHECK_INTERVAL)
     {
-        lastCheck = millis();
-        if (WiFi.status() == WL_CONNECTED)
+        lastOTACheck = millis();
+        checkOTA();
+    }
+
+    // 3. Thực thi vòng lặp Cron vô tận của Popup Global Bot
+    Serial.printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+    Serial.printf("       [⏱️] BẮT ĐẦU VÒNG LẶP CRON #%d\n", roundCount);
+    Serial.printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
+
+    WiFiClientSecure client;
+    client.setInsecure(); // Bỏ qua SSL cert để tăng tốc kết nối
+
+    // Bước 1: Login lấy token mới
+    String token = popupLogin(client);
+
+    if (token.length() > 0)
+    {
+        // Bước 2: Quét danh sách phòng HOT
+        std::vector<RoomInfo> rooms = popupGetHotRooms(client, token);
+
+        // Bước 3: Tự động Join -> Mở PK -> Thoát phòng
+        if (!rooms.empty())
         {
-            checkOTA();
+            processAllRoomsPipeline(client, token, rooms);
         }
         else
         {
-            connectWifi();
+            Serial.println("[-] Không tìm thấy phòng nào trong vòng này.");
+            showOLED("Khong co phong", "Doi vong sau...");
         }
     }
+    else
+    {
+        Serial.println("[-] Đăng nhập thất bại. Sẽ thử lại vòng sau.");
+        showOLED("Login Failed", "Retrying next loop...");
+    }
+
+    Serial.printf("\n[☕] Hoàn tất Vòng #%d. Nghỉ %lu giây...\n", roundCount, LOOP_INTERVAL_MS / 1000);
+    roundCount++;
+
+    // Thời gian nghỉ giữa các vòng
+    delay(LOOP_INTERVAL_MS);
 }

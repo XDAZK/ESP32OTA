@@ -1,0 +1,13 @@
+{
+  "name": "popup-tool",
+  "version": "1.0.0",
+  "description": "Tool call API popupglobal",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
