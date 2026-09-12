@@ -24,8 +24,6 @@ jobs:
       - name: Install PlatformIO
         run: pip install platformio
 
-      - name: Build
-        run: pio run
       - name: Generate Version & Build Firmware
         run: |
           VERSION=$(date +'%Y.%m.%d.%H%M%S')
@@ -33,13 +31,8 @@ jobs:
           export PLATFORMIO_BUILD_FLAGS="-D CURRENT_FIRMWARE_VERSION='\"$VERSION\"'"
           pio run
 
-      - name: Generate OTA Files
-        run: |
           mkdir -p docs
-
           cp .pio/build/esp32dev/firmware.bin docs/firmware.bin
-
-          VERSION=$(date +'%Y.%m.%d.%H%M%S')
 
           cat > docs/latest.json << EOF
           {
